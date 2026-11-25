@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="todo-container">
+
+        <!-- 1. Header -->
+        <header>
+            <h1>Todo List</h1>
+        </header>
+
+        <!-- 2. Add Task Form -->
+        <form id="task-form">
+            <input
+                type="text"
+                id="task-input"
+                placeholder="What needs to be done?"
+                required
+            >
+
+            <input
+                type="number"
+                id="hours-input"
+                placeholder="0"
+                min="0"
+                step="0.5"
+            >
+
+            <button type="submit" id="add-button">Add</button>
+        </form>
+
+        <!-- 3. Filters -->
+        <section class="filter-section">
+            <div class="filters">
+                <button class="filter active" data-filter="all">All</button>
+                <button class="filter" data-filter="active">Active</button>
+                <button class="filter" data-filter="completed">Completed</button>
+            </div>
+
+            <button id="mark-all">Mark all done</button>
+        </section>
+
+        <!-- 4. Task List -->
+        <ul id="task-list"></ul>
+
+        <!-- 5. Footer -->
+        <footer>
+            <div class="footer-info">
+                <span id="remaining-count">0 items left</span>
+                <span id="total-hours">0 hours total</span>
+            </div>
+
+            <button id="clear-completed">Clear completed</button>
+        </footer>
+
+        <!-- 6. Instructions -->
+        <div class="instructions">
+            <p>Easy: up to 2h · Medium: over 2h · Hard: over 5h.</p>
+            <p>Double-click a task or its label to edit. Press Enter to save, Esc to cancel.</p>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

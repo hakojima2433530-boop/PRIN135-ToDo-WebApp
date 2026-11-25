@@ -1,0 +1,278 @@
+
+/* GENERAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeae7;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 70px 20px;
+    color: #292929;
+}
+
+/* MAIN TODO CONTAINER */
+.todo-container {
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    padding: 25px;
+    border: 1px solid #c9cdd1;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* HEADER */
+header h1 {
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+/* ADD TASK FORM */
+#task-form {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 22px;
+}
+
+#task-input,
+#hours-input {
+    padding: 11px;
+    border: 1px solid #aeb4ba;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    font-size: 14px;
+    min-width: 0;
+}
+
+#task-input {
+    flex: 1;
+}
+
+#hours-input {
+    width: 75px;
+}
+
+#task-input:focus,
+#hours-input:focus {
+    outline: none;
+    border: 2px solid #2764e7;
+}
+
+/* BUTTONS */
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+#add-button {
+    background-color: #393d40;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+#add-button:hover {
+    background-color: #222629;
+}
+
+/* FILTER SECTION */
+.filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.filters {
+    display: flex;
+    gap: 5px;
+}
+
+.filter {
+    background: none;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #777;
+    font-size: 12px;
+}
+
+.filter:hover {
+    color: #222;
+}
+
+.filter.active {
+    border-color: #555;
+    color: #222;
+    font-weight: bold;
+}
+
+#mark-all,
+#clear-completed {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: #777;
+    font-size: 12px;
+}
+
+#mark-all:hover,
+#clear-completed:hover {
+    color: #222;
+}
+
+/* TASK LIST */
+#task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 3px;
+    border-bottom: 1px solid #e4e5e7;
+    min-width: 0;
+}
+
+.task-item input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.task-name {
+    flex: 1;
+    font-size: 14px;
+    cursor: text;
+    overflow-wrap: anywhere;
+}
+
+.task-item.completed .task-name {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* DIFFICULTY LABELS */
+.difficulty {
+    padding: 4px 9px;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    font-size: 10px;
+    white-space: nowrap;
+    cursor: text;
+}
+
+.difficulty.easy {
+    color: #555;
+    background: white;
+}
+
+.difficulty.medium {
+    color: white;
+    background: #555b60;
+    border-color: #555b60;
+}
+
+.difficulty.hard {
+    color: white;
+    background: #393d40;
+    border-color: #393d40;
+}
+
+/* DELETE BUTTON */
+.delete-button {
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 17px;
+    padding: 0 4px;
+}
+
+.delete-button:hover {
+    color: #d33;
+}
+
+/* INLINE EDITING */
+.edit-input {
+    flex: 1;
+    min-width: 0;
+    padding: 6px;
+    border: 1px solid #2764e7;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* EMPTY LIST */
+.empty-message {
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    padding: 25px 5px;
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #777;
+}
+
+.footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* INSTRUCTIONS */
+.instructions {
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+    body {
+        padding: 25px 12px;
+    }
+
+    .todo-container {
+        padding: 18px;
+    }
+
+    #task-form {
+        flex-wrap: wrap;
+    }
+
+    #task-input {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .task-item {
+        gap: 7px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+}
